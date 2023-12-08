@@ -3,8 +3,13 @@ package ru.yandex.praktikum.pageObject;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 import static ru.yandex.praktikum.data.Constants.MAIN_PAGE;
 
 public class MainPage {
@@ -16,9 +21,9 @@ public class MainPage {
     private final  By tabBuns = By.xpath(".//span[text()='Булки']");
     private final  By tabSauces = By.xpath(".//span[text()='Соусы']");
     private final  By tabIngredients = By.xpath(".//span[text()='Начинки']");
-    private final  By textBuns = By.xpath(".//h2[text()='Булки']");
-    private final  By textSauces = By.xpath(".//h2[text()='Соусы']");
-    private final  By textIngredients = By.xpath(".//h2[text()='Начинки']");
+    private final  By bunsActive = By.xpath(".//div[contains(@class, 'tab_tab_type_current__2BEPc') and contains(span/text(),'Булки')]");
+    private final  By saucesActive = By.xpath(".//div[contains(@class, 'tab_tab_type_current__2BEPc') and contains(span/text(),'Соусы')]");
+    private final  By ingredientsActive = By.xpath(".//div[contains(@class, 'tab_tab_type_current__2BEPc') and contains(span/text(),'Начинки')]");
 
 
     public MainPage(WebDriver driver){
@@ -62,20 +67,17 @@ public class MainPage {
         driver.findElement(tabIngredients).click();
         return this;
     }
-    @Step("Отображение на экране текста Булки")
-    public boolean textBunsIsDisplayed(){
-        return driver.findElement(textBuns).isDisplayed();
-
+    @Step("Вкладка \"Булки\" активна")
+    public boolean bunsIsDisplayed(){
+        return driver.findElement(bunsActive).isDisplayed();
     }
-    @Step("Отображение на экране текста Соусы")
-    public boolean  textSaucesIsDisplayed(){
-        return driver.findElement(textSauces).isDisplayed();
-
+    @Step("Вкладка \"Соусы\" активна")
+    public boolean  saucesIsDisplayed(){
+        return driver.findElement(saucesActive).isDisplayed();
     }
-    @Step("Отображение на экране текста Начинки")
-    public boolean textIngredientsIsDisplayed(){
-        return driver.findElement(textIngredients).isDisplayed();
-
+    @Step("Вкладка \"Начинки\" активна")
+    public boolean ingredientsIsDisplayed(){
+        return driver.findElement(ingredientsActive).isDisplayed();
     }
 
 

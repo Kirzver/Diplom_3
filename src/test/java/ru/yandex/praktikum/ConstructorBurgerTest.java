@@ -19,7 +19,7 @@ public class ConstructorBurgerTest extends BeforeAndAfterBaseClass {
                 .waitLoadTitle()
                 .clickOnTabonSauces()
                 .clickOnTabBuns()
-                .textBunsIsDisplayed();
+                .bunsIsDisplayed();
 
         Assert.assertTrue(bunsIsDisplayed);
     }
@@ -32,7 +32,7 @@ public class ConstructorBurgerTest extends BeforeAndAfterBaseClass {
                 .openPage()
                 .waitLoadTitle()
                 .clickOnTabonSauces()
-                .textSaucesIsDisplayed();
+                .saucesIsDisplayed();
 
         Assert.assertTrue(saucesIsDisplayed);
     }
@@ -45,7 +45,7 @@ public class ConstructorBurgerTest extends BeforeAndAfterBaseClass {
                 .openPage()
                 .waitLoadTitle()
                 .clickOnTabIngredients()
-                .textIngredientsIsDisplayed();
+                .ingredientsIsDisplayed();
 
         Assert.assertTrue(ingredientsIsDisplayed);
     }
